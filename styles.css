@@ -1,0 +1,26 @@
+.active-status {
+  background-color: rgb(61, 101, 202);
+  color: white;
+  padding: 15px 20px;
+
+  border-radius: 8px;
+
+  font-weight: bold;
+
+  text-align: center;
+
+  flex: 1;
+}
+.status {
+  background-color: #e8eef5;
+
+  padding: 15px 20px;
+
+  border-radius: 8px;
+
+  font-weight: bold;
+
+  text-align: center;
+
+  flex: 1;
+}
