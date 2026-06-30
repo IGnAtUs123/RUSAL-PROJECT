@@ -24,3 +24,6 @@
 
   flex: 1;
 }
+button:hover {
+  background-color: #163a5c;
+}
