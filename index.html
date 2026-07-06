@@ -20,7 +20,7 @@
     <div class="container">
       <div class="card">
         <h1>Система управления состояниями электролизёров</h1>
-
+        <p><strong>Инцидент:</strong> INC-2025-001</p>
         <div class="status-flow">
           <div class="status" id="off">Отключение</div>
 
@@ -43,6 +43,16 @@
 
         <form id="incidentForm">
           <div class="form-group">
+            <div class="form-group">
+              <label for="building">Корпус</label>
+
+              <select id="building" required>
+                <option value="">Выберите корпус</option>
+                <option value="1">Корпус №1</option>
+                <option value="2">Корпус №2</option>
+                <option value="3">Корпус №3</option>
+              </select>
+            </div>
             <label for="electrolyzer"> Номер электролизёра </label>
 
             <input
@@ -54,7 +64,9 @@
           </div>
 
           <div class="form-group">
-            <label for="email"> Email сотрудника </label>
+            <label for="email">
+              Email сотрудника (для демонстрации валидации)
+            </label>
 
             <input
               type="email"
@@ -65,12 +77,24 @@
           </div>
 
           <div class="form-group">
+            <div class="form-group">
+              <label>Текущее состояние</label>
+
+              <input
+                type="text"
+                id="currentStatus"
+                value="Отключение"
+                readonly
+              />
+            </div>
             <label for="status"> Новое состояние </label>
 
             <select id="status" required>
               <option value="">Выберите состояние</option>
 
-              <option value="Отключение">Отключение</option>
+              <option value="Отключение" class="currentStatus">
+                Отключение
+              </option>
 
               <option value="Ремонт">Ремонт</option>
 

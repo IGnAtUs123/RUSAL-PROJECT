@@ -1,3 +1,5 @@
+let currentStatus = "Отключение";
+
 document
   .getElementById("incidentForm")
   .addEventListener("submit", function (event) {
@@ -10,7 +12,6 @@ document
 
     if (!regex.test(emailValue)) {
       emailInput.style.borderColor = "red";
-
       $("#dialog-text")
         .text("Пожалуйста, введите корректный email.")
         .css("font-size", "42px");
@@ -25,9 +26,10 @@ document
       });
     } else {
       emailInput.style.borderColor = "green";
+      currentStatus.value = statusEl.value;
 
       $("#dialog-text")
-        .text("Инцидент успешно отправлен.")
+        .text("Инцидент INC-2025-001 успешно зарегистрирован.")
         .css("font-size", "42px");
 
       $("#dialog-message").dialog({
@@ -42,6 +44,7 @@ document
   });
 
 const statusEl = document.getElementById("status");
+
 const statuses = document.querySelectorAll(".status");
 
 statusEl.addEventListener("change", function () {
