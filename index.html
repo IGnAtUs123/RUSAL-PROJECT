@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Система управления состояниями электролизёров</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>Система управления состояниями электролизёров</h1>
+
+        <div class="status-flow">
+          <div class="status" id="off">Отключение</div>
+
+          <div class="arrow">→</div>
+
+          <div class="status" id="repair">Ремонт</div>
+
+          <div class="arrow">→</div>
+
+          <div class="status" id="outOfRepair">Выход из ремонта</div>
+
+          <div class="arrow">→</div>
+
+          <div class="status" id="firing">Обжиг</div>
+
+          <div class="arrow">→</div>
+
+          <div class="status" id="on">Пуск</div>
+        </div>
+
+        <form id="incidentForm">
+          <div class="form-group">
+            <label for="electrolyzer"> Номер электролизёра </label>
+
+            <input
+              type="text"
+              id="electrolyzer"
+              placeholder="Введите номер"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email"> Email сотрудника </label>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="example@rusal.ru"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="status"> Новое состояние </label>
+
+            <select id="status" required>
+              <option value="">Выберите состояние</option>
+
+              <option value="Отключение">Отключение</option>
+
+              <option value="Ремонт">Ремонт</option>
+
+              <option value="Выход из ремонта">Выход из ремонта</option>
+
+              <option value="Обжиг">Обжиг</option>
+
+              <option value="Пуск">Пуск</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="description"> Комментарий </label>
+
+            <textarea
+              id="description"
+              placeholder="Введите описание..."
+              required
+            ></textarea>
+          </div>
+          <!-- <span id="error-message">Пожалуйста, заполните все поля!</span> -->
+          <button type="submit">Сохранить состояние</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="dialog-message" title="Сообщение">
+      <p id="dialog-text"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
